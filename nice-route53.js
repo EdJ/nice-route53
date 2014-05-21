@@ -102,6 +102,15 @@ function convertListResourceRecordSetsResponseToRecords(response) {
             ttl  : recordSet.TTL,
         };
 
+        // Alias
+        if ( record.type == 'A' && recordSet.AliasTarget ) {
+            record.values = [
+                recordSet.AliasTarget.DNSName
+            ];
+
+            return records.push(record);
+        }
+
         // if there are no resource records, then this might be an Alias!
         if ( !recordSet.ResourceRecords ) return;
 

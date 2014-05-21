@@ -23,12 +23,10 @@
       <ResourceRecordSet>
          <Name>example.com.</Name>
          <Type>A</Type>
-         <TTL>604800</TTL>
-         <ResourceRecords>
-            <ResourceRecord>
-               <Value>1.2.3.4</Value>
-            </ResourceRecord>
-         </ResourceRecords>
+         <AliasTarget>
+             <HostedZoneId>AKFAKEZONEID</HostedZoneId>
+             <DNSName>a.domain.override</DNSName>
+         </AliasTarget>
       </ResourceRecordSet>
       <ResourceRecordSet>
          <Name>example.com.</Name>
